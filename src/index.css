@@ -1,0 +1,32 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+*{
+  font-family:Verdana;
+}
+
+
+
+body {
+  overflow-x: hidden; /* Ensures no horizontal scroll */
+}
+
+/* Custom scrollbar for the entire body */
+body::-webkit-scrollbar {
+  width: 8px; /* Thin scrollbar */
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.6); /* Light red color */
+  border-radius: 10px; /* Rounded edges */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.8); /* Slightly darker on hover */
+}
+
+body::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1); /* Faint background */
+  border-radius: 10px;
+}
