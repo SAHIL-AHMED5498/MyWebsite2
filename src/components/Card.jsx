@@ -18,10 +18,10 @@ export default function BlogSection() {
     },
     {
       id: 3,
-      image: "https://via.placeholder.com/300",
-      title: "The Future of AI Experiments",
+      image: "https://www.gstatic.com/search-labs/9bbb3ab7-1572-4999-8ea1-2ea42e9d42d8.png",
+      title: "Understanding Quantum Computing",
       description:
-        "Discover groundbreaking AI experiments that are shaping the future of technology and design.",
+        "Explore the fundamentals of quantum computing and how it differs from classical computing, shaping the future of computational power.",
       link: "#",
     },
   ];

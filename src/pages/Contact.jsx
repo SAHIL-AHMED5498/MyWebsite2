@@ -10,23 +10,27 @@ const Contact = () => {
         </p>
 
         {/* Contact Form */}
-        <form className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md space-y-4">
+        <form className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md space-y-4" name="contact" netlify>
           <input
+          name="name"
             type="text"
             placeholder="Your Name"
             className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-md bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
           <input
+          name="email"
             type="email"
             placeholder="Your Email"
             className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-md bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
           <textarea
+          name="text"
             placeholder="Your Message"
             rows="4"
             className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-md bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
           <button
+          
             type="submit"
             className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-md transition-all duration-300"
           >

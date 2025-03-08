@@ -11,13 +11,14 @@ function Home() {
        <h1 className="flex items-center gap-2 text-slate-600  text-3xl font-bold pb-2 dark:text-amber-500">
   SAHIL AHMED <Thunder />
 </h1>
-      <h3 className='text-slate-500 pb-2 '>Software Engineer & Web-Developer</h3>
+      <h3 className='text-slate-600 dark:text-slate-400 pb-2 '>Software Engineer & Web-Developer</h3>
       <Profile/> <br />
 
-
-     
-      <p className='my-2 '>Hi there, i m , a programmer who loves building new things . I also like working in projects which i find interest in. In addition to coding i also watch animes and likes to write blogs about it.</p>
-
+      <p className="my-2 text-[1.3rem]">
+  Hi there! I'm a passionate programmer who loves building innovative and impactful projects.  
+  I enjoy solving complex problems and continuously exploring new technologies.  
+  Besides coding, I also like sharing my knowledge through technical blogs and discussions.  
+</p>
 
       
 
