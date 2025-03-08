@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react"; // Importing icons for hamburger menu
 import { Link } from "react-router-dom";
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
   const [darkMode, setDarkMode] = useState(() => {
@@ -20,11 +21,12 @@ const Navbar = () => {
   }, [darkMode]);
 
   return (
-    <nav className="w-full bg-slate-300 dark:bg-gray-950 shadow-md px-4 py-2 min-h-[48px]">
+    <nav className="w-full bg-slate-300 dark:bg-gray-950 shadow-md px-4 py-2 h-12 ">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
-        <h1 className="text-lg font-bold text-gray-900 dark:text-white">MyLogo</h1>
-
+        <h1 className="text-lg font-bold text-gray-900 dark:text-white">
+  <img src={logo} alt="Logo" className="h-10 w-auto pb-1" />
+</h1>
         {/* Desktop Nav Links (Hidden on Mobile) */}
         <ul className="hidden md:flex space-x-6 ml-auto">
           <li><Link to="/" className="text-gray-700 dark:text-gray-300">Home</Link></li>
