@@ -1,12 +1,14 @@
 import React from "react";
 import emailjs from '@emailjs/browser'
+import { useState } from "react";
 
 const Contact = () => {
-
+  const [isSending, setIsSending] = useState(false); 
 
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setIsSending(true);
     console.log("email being sent");
 
     emailjs.sendForm(
@@ -18,9 +20,11 @@ const Contact = () => {
     .then((result) => {
         console.log("Success:", result.text);
         e.target.reset();  // Clears the form on success
+        setIsSending(false);
     })
     .catch((error) => {
         console.log("Error:", error.text);
+        setIsSending(false);
     });
 };
 
@@ -57,9 +61,13 @@ const Contact = () => {
           <button
           
             type="submit"
-            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-md transition-all duration-300"
+            className={`w-full py-3 rounded-md transition-all duration-300 font-semibold ${
+              isSending
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-blue-500 hover:bg-blue-600 text-white"
+            }`}
           >
-            Send Message
+            {isSending ? "Sending..." : "Send Message"}
           </button>
         </form>
       </div>
