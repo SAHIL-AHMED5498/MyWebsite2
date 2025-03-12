@@ -1,6 +1,31 @@
 import React from "react";
+import emailjs from '@emailjs/browser'
 
 const Contact = () => {
+
+
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    console.log("email being sent");
+
+    emailjs.sendForm(
+        import.meta.env.VITE_SERVICE_ID, 
+        import.meta.env.VITE_TEMPLATE_ID, 
+        e.target, 
+        import.meta.env.VITE_PUBLIC_ID
+    )
+    .then((result) => {
+        console.log("Success:", result.text);
+        e.target.reset();  // Clears the form on success
+    })
+    .catch((error) => {
+        console.log("Error:", error.text);
+    });
+};
+
+
+
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 flex items-start justify-center px-6 py-6">
       <div className="max-w-lg w-full text-center">
@@ -10,21 +35,21 @@ const Contact = () => {
         </p>
 
         {/* Contact Form */}
-        <form className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md space-y-4" name="contact" netlify>
+        <form className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md space-y-4" name="contact" onSubmit={sendEmail}>
           <input
-          name="name"
+          name="from_name"
             type="text"
             placeholder="Your Name"
             className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-md bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
           <input
-          name="email"
+          name="email_from"
             type="email"
             placeholder="Your Email"
             className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-md bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
           <textarea
-          name="text"
+          name="message"
             placeholder="Your Message"
             rows="4"
             className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-md bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
