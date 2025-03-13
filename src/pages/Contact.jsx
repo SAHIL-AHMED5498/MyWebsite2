@@ -1,9 +1,14 @@
 import React from "react";
 import emailjs from '@emailjs/browser'
 import { useState } from "react";
+import toast from 'react-hot-toast';
 
 const Contact = () => {
   const [isSending, setIsSending] = useState(false); 
+  
+
+
+  
 
 
   const sendEmail = (e) => {
@@ -11,21 +16,33 @@ const Contact = () => {
     setIsSending(true);
     console.log("email being sent");
 
-    emailjs.sendForm(
+    const emailPromise = emailjs.sendForm(
         import.meta.env.VITE_SERVICE_ID, 
         import.meta.env.VITE_TEMPLATE_ID, 
         e.target, 
         import.meta.env.VITE_PUBLIC_ID
-    )
-    .then((result) => {
-        console.log("Success:", result.text);
-        e.target.reset();  // Clears the form on success
-        setIsSending(false);
-    })
-    .catch((error) => {
-        console.log("Error:", error.text);
-        setIsSending(false);
-    });
+    );
+
+    toast.promise(
+        emailPromise,
+        {
+            loading: "Sending email...",
+            success: <b>Email sent successfully!</b>,
+            error: <b>Could not send email.</b>,
+        }
+    );
+
+    emailPromise
+        .then((result) => {
+            console.log("Success:", result.text);
+            e.target.reset();  // Clears the form on success
+        })
+        .catch((error) => {
+            console.log("Error:", error.text);
+        })
+        .finally(() => {
+            setIsSending(false);
+        });
 };
 
 
@@ -70,6 +87,8 @@ const Contact = () => {
             {isSending ? "Sending..." : "Send Message"}
           </button>
         </form>
+
+        
       </div>
     </div>
   );

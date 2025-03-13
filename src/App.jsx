@@ -10,11 +10,16 @@ import Home from './pages/Home'
 import Contact from './pages/Contact'
 import About from './pages/About'
 import Project from './pages/Project'
+
+import { Toaster } from 'react-hot-toast';
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+    <Toaster    position="top-center"
+  reverseOrder={false}/>
+
     <Navbar/>
     <Routes>
         <Route path="/" element={<Home />} />
