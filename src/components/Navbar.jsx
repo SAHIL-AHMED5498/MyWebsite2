@@ -2,23 +2,13 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from '../assets/logo.png';
+import { ThemeContext } from "../context/ThemeContext";
+import { useContext } from "react";
 
 const Navbar = () => {
-  const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem("theme") === "dark";
-  });
-
+  const { darkMode, setDarkMode } = useContext(ThemeContext);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }, [darkMode]);
 
   return (
     <nav className="w-full bg-slate-300 dark:bg-gray-950 shadow-md px-4 py-0 h-12">

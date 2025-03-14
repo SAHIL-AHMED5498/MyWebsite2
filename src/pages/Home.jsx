@@ -3,10 +3,16 @@ import BlogSection from '../components/Card'
 import Thunder from '../components/Thunder'
 import profilePic from '../assets/profilePic.jpg'
 import Profile from '../components/Profile'
+import { useState,useEffect } from 'react'
+import Snowfall from '../components/Snowfall'
+import { useContext } from 'react'
+import { ThemeContext } from '../context/ThemeContext'
 
 function Home() {
+  const { darkMode } = useContext(ThemeContext);
   return (
     <>
+      {darkMode && <Snowfall/>}
        <div className='bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 w-full min-h-screen p-5 flex-col justify-items-start items-start '>
        <h1 className="flex items-center gap-2 text-slate-600  text-3xl font-bold pb-2 dark:text-amber-500">
   SAHIL AHMED <Thunder />
