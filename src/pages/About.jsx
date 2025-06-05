@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 
 const About = () => {
@@ -35,7 +36,12 @@ const About = () => {
       <h2 className="text-xl font-semibold mb-2">My Skills :</h2>
       <ul className="text-gray-700 dark:text-gray-300 space-y-2 text-start">
         {skills.map((skill, index) => (
-          <li key={index}>⚡ {skill}</li>
+          <motion.div
+          drag
+          whileDrag={{scale:1.2}}
+          dragConstraints={{left:0,top:0,right:0,bottom:0}}
+          > <li key={index}>⚡ {skill}</li></motion.div>
+         
         ))}
       </ul>
     </div>

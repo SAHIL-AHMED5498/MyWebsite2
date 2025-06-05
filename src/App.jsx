@@ -14,6 +14,7 @@ import Project from './pages/Project'
 import { Toaster } from 'react-hot-toast';
 function App() {
   const [count, setCount] = useState(0)
+  
 
   return (
     <>

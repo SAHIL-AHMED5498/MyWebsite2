@@ -4,27 +4,29 @@ import { Link } from "react-router-dom";
 import logo from '../assets/logo.png';
 import { ThemeContext } from "../context/ThemeContext";
 import { useContext } from "react";
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const { darkMode, setDarkMode } = useContext(ThemeContext);
   const [menuOpen, setMenuOpen] = useState(false);
+     const navigate = useNavigate();
 
 
   return (
-    <nav className="w-full bg-slate-300 dark:bg-gray-950 shadow-md px-4 py-0 h-12">
+    <nav className="w-[95vw] ml-3 mt-3 bg-slate-300 dark:bg-gray-950 shadow-md px-4 py-0 h-12 rounded-[5px] border   ">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         
         {/* Logo */}
-        <div className="flex items-center">
+        <div onClick={() => navigate('/')} className="flex items-center">
           <img src={logo} alt="Logo" className="h-12 w-auto" />
         </div>
 
         {/* Desktop Nav Links */}
         <ul className="hidden md:flex space-x-6 ml-auto">
-          <li><Link to="/" className="text-gray-700 dark:text-gray-300">Home</Link></li>
-          <li><Link to="/project" className="text-gray-700 dark:text-gray-300">Projects</Link></li>
-          <li><Link to="/about" className="text-gray-700 dark:text-gray-300">About</Link></li>
-          <li><Link to="/contact" className="text-gray-700 dark:text-gray-300">Contact</Link></li>
+          <li><Link to="/" className="text-gray-700 dark:text-gray-300 hover:font-bold cursor-pointer transition-all duration-200">Home</Link></li>
+          <li><Link to="/project"  className="text-gray-700 dark:text-gray-300 hover:font-bold cursor-pointer transition-all duration-200">Projects</Link></li>
+          <li><Link to="/about" className="text-gray-700 dark:text-gray-300 hover:font-bold cursor-pointer transition-all duration-200">About</Link></li>
+          <li><Link to="/contact" className="text-gray-700 dark:text-gray-300 hover:font-bold cursor-pointer transition-all duration-200">Contact</Link></li>
         </ul>
 
         {/* Dark Mode Toggle */}

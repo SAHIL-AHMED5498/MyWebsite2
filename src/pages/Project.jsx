@@ -7,40 +7,30 @@ const projects = [
     image: new URL("../assets/ppp.webp", import.meta.url).href,
     link: "https://sahil-ahmed5498.github.io/project-3/",
   },
-  {
-    title: "Rock Paper Scissor Game",
-    description: "Play rock paper scissor game with computer.",
-    image: new URL("../assets/rps.webp", import.meta.url).href,
-    link: "https://sahil-ahmed5498.github.io/rock-paper-game/",
-  },
+
   {
     title: "To-Do List",
     description: "Simply save and access list anytime",
     image: new URL("../assets/todo.jpg", import.meta.url).href,
     link: "https://sahil-ahmed5498.github.io/todolist/",
   },
-  {
-    title: "Bubbles Game",
-    description: "Hit correct bubble within time limit",
-    image: "../../images/bubblegame.avif",
-    link: "https://sahil-ahmed5498.github.io/BubbleGame/",
-  },
+
   {
     title: "New Project",
     description: "Coming soon...",
-    image: "../../images/weather-app-pic.png",
+    image: new URL("../assets/coming-soon.png", import.meta.url).href,
     link: "#",
   },
   {
     title: "New Project",
     description: "Coming soon...",
-    image: "../../images/coming-soon.png",
+     image: new URL("../assets/coming-soon.png", import.meta.url).href,
     link: "#",
   },
   {
     title: "New Project",
     description: "Coming soon...",
-    image: "../../images/coming-soon.png",
+    image: new URL("../assets/coming-soon.png", import.meta.url).href,
     link: "#",
   },
 ];
