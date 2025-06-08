@@ -13,7 +13,7 @@ const Navbar = () => {
 
 
   return (
-    <nav className="w-[95vw] ml-3 mt-3 bg-slate-300 dark:bg-gray-950 shadow-md px-4 py-0 h-12 rounded-[5px] border   ">
+    <nav className="w-[95vw] ml-2 mt-3 bg-slate-300 dark:bg-gray-950 shadow-md px-4 py-0 h-12 rounded-[5px] border    ">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         
         {/* Logo */}

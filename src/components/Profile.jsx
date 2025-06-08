@@ -42,7 +42,7 @@ const Profile = () => {
       
 
       {/* Social Links */}
-      <motion.div className="flex gap-4 justify-center items-start  font-[poppins] text-xl h-6" 
+      <motion.div className="flex sm:gap-4 justify-center items-start  font-[poppins] text-xl sm:h-6 sm:flex-row  flex-col gap-1 h-full  " 
           drag
           whileDrag={{scale:1.4}}
           dragConstraints={{left:0,top:0,right:0,bottom:0}}
