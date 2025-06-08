@@ -29,21 +29,26 @@ const Navbar = () => {
           <li><Link to="/contact" className="text-gray-700 dark:text-gray-300 hover:font-bold cursor-pointer transition-all duration-200">Contact</Link></li>
         </ul>
 
-        {/* Dark Mode Toggle */}
-        <button
-          onClick={() => setDarkMode(!darkMode)}
-          className="ml-auto px-3 py-1 bg-blue-100 text-blue-500 rounded-md dark:bg-gray-700 dark:text-gray-200 active:scale-95 text-sm "
-        >
-          {darkMode ? "Light" : "Dark"}
-        </button>
+  
 
         {/* Mobile Menu Button */}
         <button 
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden p-2 rounded-md text-gray-700 dark:text-gray-300"
+          className="md:hidden p-2 rounded-md text-gray-700 dark:text-gray-300 ml-auto"
         >
           {menuOpen ? <X size={24} /> : <Menu size={24} />} 
         </button>
+
+              {/* Dark Mode Toggle */}
+        <button
+          onClick={() => setDarkMode(!darkMode)}
+          className="md:ml-auto px-3 py-1 bg-blue-100 text-blue-500 rounded-md dark:bg-gray-700 dark:text-gray-200 active:scale-95 text-sm "
+        >
+          {darkMode ? "Light" : "Dark"}
+        </button>
+
+
+
       </div>
 
       {/* Mobile Menu */}
@@ -59,6 +64,9 @@ const Navbar = () => {
           <li><Link to="/contact" className="text-gray-700 dark:text-gray-300 block py-1" onClick={() => setMenuOpen(false)}>Contact</Link></li>
         </ul>
       </div>
+
+
+      
     </nav>
   );
 };
