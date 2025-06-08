@@ -32,22 +32,17 @@ const Profile = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   return (
-    <motion.div className="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 flex justify-center items-center gap-4 p-6 rounded-lg shadow-lg w-fit border border-slate-400"   
+    <motion.div className="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 flex justify-center items-center gap-4 p-1 rounded-sm shadow-lg w-fit border border-slate-400"   
     drag
     whileDrag={{scale:1.2}}
     dragConstraints={constraints}
     >
-      {/* Profile Picture */}
-      <div className="w-32 h-36">
-        <img
-          src={profilePic}
-          alt="Anime Profile"
-          className="w-full h-full rounded-md object-cover border-4 border-gray-700"
-        />
-      </div>
+      
+
+      
 
       {/* Social Links */}
-      <motion.div className="flex flex-col justify-center items-start space-y-2 font-[poppins] text-2xl" 
+      <motion.div className="flex gap-4 justify-center items-start  font-[poppins] text-xl h-6" 
           drag
           whileDrag={{scale:1.4}}
           dragConstraints={{left:0,top:0,right:0,bottom:0}}

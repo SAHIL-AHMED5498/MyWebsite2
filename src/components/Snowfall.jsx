@@ -43,7 +43,7 @@ const Snowfall = () => {
     setTimeout(() => {
       snowfallActive = false;
       clearInterval(interval);
-    }, 7000);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, []);

@@ -21,11 +21,16 @@ function Home() {
         </h1>
         <h3 className='text-slate-600 dark:text-slate-400 pb-1 '>Software Engineer & Web-Developer</h3>
          <br />
+
+           <Profile/>
+          
         <p className="my-1 text-[1.3rem] leading-[35px] ">
           Hi there! I'm a passionate programmer who loves building innovative and impactful projects.
           I enjoy solving complex problems and continuously exploring new technologies. <br />
           Besides coding, I also like sharing my knowledge through technical blogs and discussions.
-        </p>
+        </p> 
+       
+         <br />
 
     <button
   onClick={() => navigate('/project')}
