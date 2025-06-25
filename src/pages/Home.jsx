@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Home() {
   const { darkMode } = useContext(ThemeContext);
-   const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <>
       {darkMode && <Snowfall />}
@@ -20,28 +20,28 @@ function Home() {
           SAHIL AHMED <Thunder />
         </h1>
         <h3 className='text-slate-600 dark:text-slate-400 pb-1 '>Software Engineer & Web-Developer</h3>
-         <br />
+        <br />
 
-           <Profile/>
-          
+        <Profile />
+
         <p className="my-1 text-[1.3rem] leading-[35px] ">
           Hi there! I'm a passionate programmer who loves building innovative and impactful projects.
           I enjoy solving complex problems and continuously exploring new technologies. <br />
           Besides coding, I also like sharing my knowledge through technical blogs and discussions.
-        </p> 
-       
-         <br />
+        </p>
 
-    <button
-  onClick={() => navigate('/project')}
-  className="bg-black text-white px-7 py-2 rounded-[5px] dark:bg-white dark:text-black active:scale-95 transition-transform duration-150"
->
-  Projects -
-</button>
+        <br />
+
+        <button
+          onClick={() => navigate('/project')}
+          className="bg-black text-white px-7 py-2 rounded-[5px] dark:bg-white dark:text-black active:scale-95 transition-transform duration-150"
+        >
+          Projects -
+        </button>
 
 
 
-        
+
 
 
 
