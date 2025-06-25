@@ -41,13 +41,13 @@ function Home() {
 
 
 
-
+        <div className='h-full w-full border-amber-950 overflow-hidden m-1.5 p-2 '><p>This is from feature - 1</p></div>
 
 
 
       </div>
 
-
+      
 
     </>
   )
