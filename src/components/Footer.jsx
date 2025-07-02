@@ -7,12 +7,12 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
         
         {/* Site name or logo */}
-        <div className="text-lg font-semibold text-white">
+        <div className="text-lg font-semibold text-white ">
           © {new Date().getFullYear()} <a href="https://sahilcodes.live" className="hover:text-indigo-400 transition">sahilcodes.live</a>
         </div>
 
         {/* Social Links */}
-        <div className="flex space-x-5 w-100vw">
+        <div className="flex space-x-5 w-100vw mx-auto">
           <a
             href="https://github.com/your-github-username"
             target="_blank"

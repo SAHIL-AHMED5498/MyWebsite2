@@ -17,31 +17,34 @@ function Home() {
   return (
     <>
       {darkMode && <Snowfall />}
-      <div className='bg-slate-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 w-full min-h-screen p-2 flex-col justify-items-start items-start '>
+      <div className='bg-slate-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen p-2 flex-col justify-center items-center flex '>
+        
         <h1 className="flex items-center gap-2 text-slate-600  text-3xl font-bold pb-2 dark:text-amber-500 ">
           SAHIL AHMED <Thunder />
         </h1>
+
         <h3 className='text-slate-600 dark:text-slate-400 pb-1 '>Software Engineer & Web-Developer</h3>
         <br />
 
         <Profile />
 
-        <p className="my-1 text-[1.3rem] leading-[35px] ">
+        <p className=" text-lg mt-5 text-slate-600 font-bold ">
           Hi there! I'm a passionate programmer who loves building innovative and impactful projects.
           I enjoy solving complex problems and continuously exploring new technologies. <br />
           Besides coding, I also like sharing my knowledge through technical blogs and discussions.
         </p>
+
         <div className='h-full w-full border-amber-950 overflow-hidden m-1.5 p-2 '>
-         <Project />
+          <Project />
         </div>
 
-       
 
-        
+
+
 
 
       </div>
-       
+
     </>
   )
 }
