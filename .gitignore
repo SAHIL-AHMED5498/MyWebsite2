@@ -26,3 +26,6 @@ dist-ssr
 
 # Environment variables (IMPORTANT)
 .env
+
+#things which could automatically generated
+/node_modules

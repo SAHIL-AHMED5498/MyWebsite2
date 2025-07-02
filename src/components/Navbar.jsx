@@ -5,6 +5,8 @@ import logo from '../assets/logo.png';
 import { ThemeContext } from "../context/ThemeContext";
 import { useContext } from "react";
 import { useNavigate } from 'react-router-dom';
+import { div } from "motion/react-client";
+import { MdMenuBook } from "react-icons/md";
 
 const Navbar = () => {
   const { darkMode, setDarkMode } = useContext(ThemeContext);
@@ -34,9 +36,9 @@ const Navbar = () => {
         {/* Mobile Menu Button */}
         <button 
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden p-2 rounded-md text-gray-700 dark:text-gray-300 ml-auto"
+          className="md:hidden p-2 rounded-sm text-gray-700 dark:text-gray-300 ml-auto border-1 h-8 flex justify-center items-center m-2 w-12"
         >
-          {menuOpen ? <X size={24} /> : <Menu size={24} />} 
+          {menuOpen ? <X size={24} /> : "Menu"} 
         </button>
 
               {/* Dark Mode Toggle */}

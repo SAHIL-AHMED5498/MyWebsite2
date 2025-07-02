@@ -32,7 +32,7 @@ const Profile = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   return (
-    <motion.div className="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 flex justify-center items-center gap-4 p-1 rounded-sm shadow-lg w-fit border border-slate-400"   
+    <motion.div className="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 flex justify-center items-center gap-4 p-1 rounded-sm shadow-lg w-fit border border-slate-400 h-16"   
     drag
     whileDrag={{scale:1.2}}
     dragConstraints={constraints}

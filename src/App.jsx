@@ -1,19 +1,17 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-
 import Navbar from './components/Navbar'
-
 import { Routes, Route } from "react-router-dom";
 import Home from './pages/Home'
 import Contact from './pages/Contact'
 import About from './pages/About'
 import Project from './pages/Project'
+import Footer from './components/Footer';
+
 
 import { Toaster } from 'react-hot-toast';
 function App() {
-  const [count, setCount] = useState(0)
+const [count, setCount] = useState(0)
   
 
   return (
@@ -28,11 +26,15 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/project" element={<Project />} />
       </Routes>
+      <div><Footer/></div>
+
+      
+      </>
     
 
    
    
-    </>
+    
   )
 }
 
