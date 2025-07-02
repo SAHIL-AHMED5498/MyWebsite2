@@ -10,6 +10,7 @@ import { ThemeContext } from '../context/ThemeContext'
 import { useNavigate } from 'react-router-dom';
 import Project from './Project'
 import Footer from '../components/Footer'
+import ScrollToTopButton from '../components/ScrollToTopButton'
 function Home() {
   const { darkMode } = useContext(ThemeContext);
   const navigate = useNavigate();
@@ -40,6 +41,7 @@ function Home() {
 
 
       </div>
+       
     </>
   )
 }

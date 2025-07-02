@@ -7,6 +7,7 @@ import Contact from './pages/Contact'
 import About from './pages/About'
 import Project from './pages/Project'
 import Footer from './components/Footer';
+import ScrollToTopButton from './components/ScrollToTopButton';
 
 
 import { Toaster } from 'react-hot-toast';
@@ -26,6 +27,7 @@ const [count, setCount] = useState(0)
         <Route path="/contact" element={<Contact />} />
         <Route path="/project" element={<Project />} />
       </Routes>
+      <ScrollToTopButton />
       <div><Footer/></div>
 
       
