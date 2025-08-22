@@ -1,6 +1,12 @@
 import React from "react";
 
 const projects = [
+    {
+    title: "Flix-Gpt",
+    description: "AI-powered movie discovery app that recommends films using GPT and TMDB API.",
+    image: "/images/flix-homepage.png",
+    link: "https://flix-gpt-f48c8.web.app/",
+  },
   {
     title: "Purchase Power Parity Calc",
     description: "Calc purchasing power of different currencies",
@@ -15,12 +21,7 @@ const projects = [
     link: "https://sahil-ahmed5498.github.io/todolist/",
   },
 
-  {
-    title: "New Project",
-    description: "Coming soon...",
-    image: new URL("../assets/coming-soon.png", import.meta.url).href,
-    link: "#",
-  },
+
   {
     title: "New Project",
     description: "Coming soon...",

@@ -14,7 +14,7 @@ const Footer = () => {
         {/* Social Links */}
         <div className="flex space-x-5 w-100vw mx-auto">
           <a
-            href="https://github.com/your-github-username"
+            href="https://github.com/SAHIL-AHMED5498"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white transition"
@@ -23,7 +23,7 @@ const Footer = () => {
             <FaGithub size={20} />
           </a>
           <a
-            href="https://linkedin.com/in/your-linkedin-id"
+            href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white transition"
