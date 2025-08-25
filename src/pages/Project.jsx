@@ -50,11 +50,14 @@ const Project = () => {
         {/* Project Cards */}
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
-            <motion.div
+            <motion.a
               key={index}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 200, damping: 15 }}
-              className="bg-white dark:bg-gray-800 rounded-sm shadow-lg overflow-hidden hover:shadow-xl transition-all"
+              className="block bg-white dark:bg-gray-800 rounded-sm shadow-lg overflow-hidden hover:shadow-xl transition-all"
             >
               <div className="relative">
                 <img
@@ -63,14 +66,9 @@ const Project = () => {
                   className="w-full h-44 object-cover"
                 />
                 <div className="absolute inset-0 bg-black/30 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-blue-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-600 transition"
-                  >
+                  <span className="bg-blue-500 text-white py-2 px-4 rounded-lg shadow-md">
                     View Project
-                  </a>
+                  </span>
                 </div>
               </div>
               <div className="p-4 text-left">
@@ -81,7 +79,7 @@ const Project = () => {
                   {project.description}
                 </p>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>
