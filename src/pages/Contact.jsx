@@ -47,14 +47,14 @@ const Contact = () => {
           onSubmit={sendEmail}
         >
           <input
-            name="from_name"  // must match template
+            name="from_name"  
             type="text"
             placeholder="Your Name"
             required
             className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-md bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
           <input
-            name="reply_to"  // fix this to match EmailJS template
+            name="reply_to"  
             type="email"
             placeholder="Your Email"
             required

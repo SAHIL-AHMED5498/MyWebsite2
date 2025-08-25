@@ -1,7 +1,7 @@
 import React from "react";
 
 const projects = [
-    {
+  {
     title: "Flix-Gpt",
     description: "AI-powered movie discovery app that recommends films using GPT and TMDB API.",
     image: "/images/flix-homepage.png",
@@ -13,28 +13,26 @@ const projects = [
     image: new URL("../assets/ppp.webp", import.meta.url).href,
     link: "https://sahil-ahmed5498.github.io/project-3/",
   },
-
-  {
-    title: "To-Do List",
-    description: "Simply save and access list anytime",
-    image: new URL("../assets/todo.jpg", import.meta.url).href,
-    link: "https://sahil-ahmed5498.github.io/todolist/",
-  },
-
-
   {
     title: "New Project",
     description: "Coming soon...",
-     image: new URL("../assets/coming-soon.png", import.meta.url).href,
+    image: "/images/new-project.jpg",   // ✅ use this since it's in public/images
     link: "#",
   },
   {
     title: "New Project",
     description: "Coming soon...",
-    image: new URL("../assets/coming-soon.png", import.meta.url).href,
+     image: "/images/new-project.jpg",
+    link: "#",
+  },
+  {
+    title: "New Project",
+    description: "Coming soon...",
+   image: "/images/new-project.jpg",
     link: "#",
   },
 ];
+
 
 const Project = () => {
   return (
@@ -42,10 +40,7 @@ const Project = () => {
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 flex items-start justify-start px-6 py-6">
       <div className="max-w-full w-full text-center">
         <h1 className="text-3xl font-bold mb-4">Projects</h1>
-        <p className="text-lg text-gray-600 dark:text-gray-300">
-          Welcome , Here are some of my recent works.
-        </p>
-
+      
         {/* Project Cards */}
         <div className=" mt-8 grid gap-4 sm:grid-cols-4 ">
           {projects.map((project, index) => (
