@@ -37,7 +37,7 @@ const projects = [
 
 const Project = () => {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 flex items-start justify-center px-6 py-12">
+    <div className="min-h-screen bg-slate-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 flex items-start justify-center px-6 py-12">
       <div className="max-w-6xl w-full text-center">
         <h1 className="text-4xl font-extrabold mb-6 text-gray-800 dark:text-gray-100">
           My Projects
