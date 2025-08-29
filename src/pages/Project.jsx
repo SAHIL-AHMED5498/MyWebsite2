@@ -16,16 +16,16 @@ const projects = [
     link: "https://sahil-ahmed5498.github.io/project-3/",
   },
   {
-    title: "New Project",
-    description: "Coming soon...",
-    image: "/images/new-project.jpg",
-    link: "#",
+    title: "DevConnect-Backend",
+    description: "Robust Backend for Recruitment Platform ",
+    image: "/images/TMDB.png",
+    link: "https://github.com/SAHIL-AHMED5498/DevConnect.git",
   },
   {
-    title: "New Project",
-    description: "Coming soon...",
-    image: "/images/new-project.jpg",
-    link: "#",
+    title: "Notei-it-Backend",
+    description: "Efficient Backend for Note Management using sequelize",
+    image: "/images/NOTE-IT.png",
+    link: "https://github.com/SAHIL-AHMED5498/Note-It.git",
   },
   {
     title: "New Project",
@@ -63,7 +63,7 @@ const Project = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-44 object-cover"
+                  className="w-full h-44 object-cover pt-2"
                 />
                 <div className="absolute inset-0 bg-black/30 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
                   <span className="bg-blue-500 text-white py-2 px-4 rounded-lg shadow-md">
