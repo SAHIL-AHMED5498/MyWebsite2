@@ -48,7 +48,7 @@ const Project = () => {
         </p>
 
         {/* Project Cards */}
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className=" mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <motion.a
               key={index}
@@ -57,7 +57,7 @@ const Project = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 200, damping: 15 }}
-              className="block bg-white dark:bg-gray-800 rounded-sm shadow-lg overflow-hidden hover:shadow-xl transition-all"
+              className="block bg-slate-100 dark:bg-gray-800 rounded-sm shadow-lg overflow-hidden hover:shadow-xl transition-all"
             >
               <div className="relative">
                 <img

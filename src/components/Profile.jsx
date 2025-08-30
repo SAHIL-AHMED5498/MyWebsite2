@@ -5,6 +5,7 @@ import { useEffect,useState } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faYoutube, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import ResumeDownload from "./ResumeDownload";
 
 const Profile = () => {
   const [constraints, setConstraints] = useState({ left: 0, top: 0, right: 0, bottom: 0 });
@@ -74,6 +75,7 @@ const Profile = () => {
         >
           <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
         </a>
+        <div><ResumeDownload/></div>
       </motion.div>
     </motion.div>
   );
