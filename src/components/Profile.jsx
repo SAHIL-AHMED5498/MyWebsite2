@@ -33,51 +33,51 @@ const Profile = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   return (
-    <motion.div className="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 flex justify-center items-center gap-4 p-1 rounded-sm shadow-lg w-fit border border-slate-400 h-16"   
-    drag
-    whileDrag={{scale:1.2}}
-    dragConstraints={constraints}
-    >
-      
+   <motion.div
+  className="p-2 font-[poppins] text-xl grid grid-cols-2 grid-rows-3 sm:grid-rows-1 sm:flex sm:gap-4 sm:justify-center sm:items-start  gap-x-4 gap-y-2 h-full border-1 border-slate-400"
+  drag
+  whileDrag={{ scale: 1.4 }}
+  dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0 }}
+>
+  <a
+    href="https://github.com/SAHIL-AHMED5498"
+    className="flex items-center gap-2 text-purple-500 hover:text-purple-300 transition"
+  >
+    <FontAwesomeIcon icon={faGithub} /> GitHub
+  </a>
 
-      
+  <a
+    href="https://youtube.com/@sahilahmed_5498?si=5dUtIJAKIIC2OrjF"
+    className="flex items-center gap-2 text-red-500 hover:text-red-400 transition"
+  >
+    <FontAwesomeIcon icon={faYoutube} /> YouTube
+  </a>
 
-      {/* Social Links */}
-      <motion.div className="sm:flex sm:gap-4 sm:justify-center sm:items-start  font-[poppins] text-xl sm:h-6 sm:flex-row grid grid-cols-2 frid-rows-2 gap-x-4 h-full  " 
-          drag
-          whileDrag={{scale:1.4}}
-          dragConstraints={{left:0,top:0,right:0,bottom:0}}
-      >
-        <a
-          href="https://github.com/SAHIL-AHMED5498"
-          className="flex items-center gap-2 text-purple-500 hover:text-purple-300 transition"
-        >
-          <FontAwesomeIcon icon={faGithub} /> GitHub
-        </a>
+  <a
+    href="#"
+    className="flex items-center gap-2 text-pink-500 hover:text-pink-400 transition"
+  >
+    <FontAwesomeIcon icon={faInstagram} /> Instagram
+  </a>
 
-        <a
-          href="https://youtube.com/@sahilahmed_5498?si=5dUtIJAKIIC2OrjF"
-          className="flex items-center gap-2 text-red-500 hover:text-red-400 transition"
-        >
-          <FontAwesomeIcon icon={faYoutube} /> YouTube
-        </a>
+  <a
+    href="https://www.linkedin.com/in/sahil-ahmed-5a32b2222/"
+    className="flex items-center gap-2 text-blue-500 hover:text-blue-400 transition"
+  >
+    <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
+  </a>
 
-        <a
-          href="#"
-          className="flex items-center gap-2 text-pink-500 hover:text-pink-400 transition"
-        >
-          <FontAwesomeIcon icon={faInstagram} /> Instagram
-        </a>
+  <div className="mr-5 sm:mr-0">
+    <ResumeDownload />
+    
 
-        <a
-          href="https://www.linkedin.com/in/sahil-ahmed-5a32b2222/"
-          className="flex items-center gap-2 text-blue-500 hover:text-blue-400 transition"
-        >
-          <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
-        </a>
-        <div><ResumeDownload/></div>
-      </motion.div>
-    </motion.div>
+  </div>
+  
+  
+</motion.div>
+
+
+
   );
 };
 

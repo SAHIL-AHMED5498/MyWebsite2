@@ -9,7 +9,7 @@ export default function ResumeDownload() {
         target="_blank"
         rel="noopener noreferrer"
 
-        className=" flex justify-center items-center gap-2 mx-2 text-amber-600 hover:text-amber-500"
+        className=" flex justify-center items-center gap-2 sm:mr-2 text-amber-600 hover:text-amber-500"
       >
         <ArrowDownCircle className="w-6 h-6" />
         <span>Resume</span>
