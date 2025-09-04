@@ -39,13 +39,13 @@ const Project = () => {
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 flex items-start justify-center px-6 py-12">
       <div className="max-w-6xl w-full text-center">
-        <h1 className="text-4xl font-extrabold mb-6 text-gray-800 dark:text-gray-100">
+        <h1 className="text-4xl font-extrabold mb-2 text-gray-800 dark:text-gray-100">
           My Projects
         </h1>
-        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        {/* <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
           Here are some of the projects I’ve worked on — blending design,
           performance, and functionality.
-        </p>
+        </p> */}
 
         {/* Project Cards */}
         <div className=" mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

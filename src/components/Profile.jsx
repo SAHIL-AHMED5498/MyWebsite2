@@ -34,7 +34,7 @@ const Profile = () => {
   }, []);
   return (
    <motion.div
-  className="p-2 font-[poppins] text-xl grid grid-cols-2 grid-rows-3 sm:grid-rows-1 sm:flex sm:gap-4 sm:justify-center sm:items-start  gap-x-4 gap-y-2 h-full border-1 border-slate-400"
+  className="p-2 font-[poppins] text-xl grid grid-cols-2 grid-rows-3 sm:grid-rows-1 sm:flex sm:gap-4 sm:justify-center sm:items-start  gap-x-4 gap-y-2 h-full border-1 rounded border-slate-300"
   drag
   whileDrag={{ scale: 1.4 }}
   dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0 }}

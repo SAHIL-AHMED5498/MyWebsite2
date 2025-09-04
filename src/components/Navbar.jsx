@@ -36,7 +36,7 @@ const Navbar = () => {
         {/* Mobile Menu Button */}
         <button 
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden p-2 rounded-sm text-gray-700 dark:text-gray-300 ml-auto border-1 h-8 flex justify-center items-center m-2 w-12"
+          className="md:hidden p-2 rounded-sm text-gray-700 dark:text-gray-300 ml-auto border-1 h-7 flex justify-center items-center m-2 w-12"
         >
           {menuOpen ? <X size={24} /> : "Menu"} 
         </button>
