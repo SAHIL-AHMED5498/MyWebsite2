@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const projects = [
+
   {
     title: "Flix-Gpt",
     description:
@@ -9,6 +10,13 @@ const projects = [
     image: "/images/flix-homepage.png",
     link: "https://flix-gpt-f48c8.web.app/",
   },
+  {
+  title: "Vision AI",
+  description:
+    "Browser-based image recognition web app powered by TensorFlow.js and MobileNet, capable of identifying objects directly on the client side without any server dependency.",
+  image: "/images/vision-ai-preview.png",
+  link: "https://vision-ai-rho.vercel.app/Image-Recog/index.html",
+},
   {
     title: "Purchase Power Parity Calc",
     description: "Calc purchasing power of different currencies",
