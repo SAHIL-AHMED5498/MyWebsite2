@@ -208,6 +208,148 @@ function Home() {
             </div>
           </section>
 
+          {/* Experience Section */}
+          <section
+            id="experience"
+            className="scroll-mt-24 max-w-5xl mx-auto px-4 mt-16 sm:mt-24 space-y-8"
+          >
+            {/* Section Label */}
+          
+
+            {/* Section Heading */}
+            <div className="flex flex-col gap-3">
+              <h2 className="text-xl sm:text-2xl font-semibold tracking-[0.12em] uppercase text-slate-900 dark:text-slate-50">
+                Experience
+              </h2>
+              
+            </div>
+
+            {/* Timeline Wrapper */}
+            <div className="mt-6 space-y-6 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl bg-white/80 dark:bg-slate-950/70 p-6 sm:p-8 shadow-sm">
+              {/* Single Experience Item */}
+              <div className="relative pl-6 sm:pl-8">
+                {/* Timeline vertical line */}
+                <div className="absolute left-1 sm:left-2 top-1 bottom-1 w-px bg-slate-200 dark:bg-slate-800 pointer-events-none" />
+
+                {/* Timeline dot */}
+                <div className="absolute left-0 sm:left-1 top-2 h-2.5 w-2.5 rounded-full border border-slate-400 dark:border-slate-600 bg-slate-100 dark:bg-slate-900 shadow-sm" />
+
+                {/* Card Content */}
+                <div className="space-y-3">
+                  {/* Role / Company / Date */}
+                  <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+                    <div className="space-y-1">
+                      <p className="text-xs font-medium tracking-[0.16em] uppercase text-slate-500">
+                        Full Stack Developer (Intern)
+                      </p>
+                      <h3 className="text-sm sm:text-base font-semibold tracking-[0.08em] uppercase text-slate-900 dark:text-slate-50">
+                        Seeup Tech
+                      </h3>
+                    </div>
+                    <p className="text-[11px] font-normal tracking-[0.14em] uppercase text-slate-500">
+                      June 2025 – August 2025
+                    </p>
+                  </div>
+
+                  {/* Body / Responsibilities */}
+                  <div className="space-y-2 pt-1">
+                    <ul className="space-y-1.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+                      <li className="flex gap-2">
+                        <span className="mt-1 h-1 w-1 rounded-full bg-slate-400 dark:bg-slate-500 flex-shrink-0" />
+                        <span>
+                          Developed employee profile forms and list views in React with controlled inputs, validation, and search/filter features.
+                        </span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="mt-1 h-1 w-1 rounded-full bg-slate-400 dark:bg-slate-500 flex-shrink-0" />
+                        <span>
+                          Built CRUD API endpoints in Node.js/Express for employee records and implemented Mongoose-based schema validation.
+                        </span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="mt-1 h-1 w-1 rounded-full bg-slate-400 dark:bg-slate-500 flex-shrink-0" />
+                        <span>
+                          Troubleshot integration issues between frontend forms and backend APIs in collaboration with senior developers.
+                        </span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="mt-1 h-1 w-1 rounded-full bg-slate-400 dark:bg-slate-500 flex-shrink-0" />
+                        <span>
+                          Implemented attendance marking and monthly summary APIs with duplicate-entry safeguards.
+                        </span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="mt-1 h-1 w-1 rounded-full bg-slate-400 dark:bg-slate-500 flex-shrink-0" />
+                        <span>
+                          Created leave application UI and connected it with backend workflows for submission and status tracking.
+                        </span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="mt-1 h-1 w-1 rounded-full bg-slate-400 dark:bg-slate-500 flex-shrink-0" />
+                        <span>
+                          Added role-based access control using JWT and middleware under backend team guidance.
+                        </span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="mt-1 h-1 w-1 rounded-full bg-slate-400 dark:bg-slate-500 flex-shrink-0" />
+                        <span>
+                          Conducted manual testing using Postman and submitted structured bug reports.
+                        </span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="mt-1 h-1 w-1 rounded-full bg-slate-400 dark:bg-slate-500 flex-shrink-0" />
+                        <span>
+                          Assisted in building admin dashboard components for internal HR operations.
+                        </span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="mt-1 h-1 w-1 rounded-full bg-slate-400 dark:bg-slate-500 flex-shrink-0" />
+                        <span>
+                          Wrote sample data seeding scripts and prepared QA-ready test datasets.
+                        </span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="mt-1 h-1 w-1 rounded-full bg-slate-400 dark:bg-slate-500 flex-shrink-0" />
+                        <span>
+                          Improved API consistency with structured error messages and enhanced request validation.
+                        </span>
+                      </li>
+                      <li className="flex gap-2">
+                        <span className="mt-1 h-1 w-1 rounded-full bg-slate-400 dark:bg-slate-500 flex-shrink-0" />
+                        <span>
+                          Documented API endpoints and contributed updates to the project README for intern onboarding.
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Tech Stack Badges */}
+                  <div className="pt-3 flex flex-wrap gap-2">
+                    {[
+                      'React',
+                      'Node.js',
+                      'Express',
+                      'MongoDB',
+                      'Mongoose',
+                      'JWT',
+                      'REST APIs',
+                      'Postman',
+                      'JavaScript',
+                      'Tailwind CSS',
+                    ].map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1 rounded-full border border-slate-200/80 dark:border-slate-700/80 bg-slate-50/90 dark:bg-slate-900/80 text-[11px] font-medium tracking-[0.12em] uppercase text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Contact Section */}
           <section id="contact" className="space-y-6">
             <div className="flex flex-col gap-2">
