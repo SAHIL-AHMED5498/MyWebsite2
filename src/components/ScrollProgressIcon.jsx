@@ -1,25 +1,25 @@
 import React from "react";
 
 const ScrollProgressIcon = ({ progress }) => {
-  const radius = 16;
-  const center = 20;
+  const radius = 12;
+  const center = 16;
   const circumference = 2 * Math.PI * radius;
   const dashOffset = circumference - (progress / 100) * circumference;
 
   return (
     <svg
-      viewBox="0 0 40 40"
-      className="w-10 h-10 text-orange-400"
+      viewBox="0 0 32 32"
+      className="w-5 h-5 text-slate-700 dark:text-slate-100"
       fill="none"
       stroke="currentColor"
-      strokeWidth="6"
+      strokeWidth="4"
     >
       {/* Background circle */}
       <circle
         cx={center}
         cy={center}
         r={radius}
-        className="text-gray-300"
+        className="text-slate-300 dark:text-slate-700"
         stroke="currentColor"
       />
       {/* Foreground scroll progress */}
@@ -27,15 +27,15 @@ const ScrollProgressIcon = ({ progress }) => {
         cx={center}
         cy={center}
         r={radius}
-        className="text-orange-400"
+        className="text-slate-900 dark:text-slate-100"
         stroke="currentColor"
         strokeDasharray={circumference}
         strokeDashoffset={dashOffset}
-        style={{ transition: "stroke-dashoffset 0.3s ease" }}
+        style={{ transition: "stroke-dashoffset 0.25s ease" }}
       />
       {/* Upward-pointing arrow */}
       <path
-        d="M15,23 L20,17 L25,23"
+        d="M12,18 L16,13 L20,18"
         stroke="currentColor"
         fill="none"
         strokeLinecap="round"

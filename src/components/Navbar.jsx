@@ -1,74 +1,108 @@
-import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
-import logo from '../assets/logo.png';
+import { useState } from "react";
+import { X } from "lucide-react";
 import { ThemeContext } from "../context/ThemeContext";
 import { useContext } from "react";
-import { useNavigate } from 'react-router-dom';
-import { div } from "motion/react-client";
-import { MdMenuBook } from "react-icons/md";
 
 const Navbar = () => {
   const { darkMode, setDarkMode } = useContext(ThemeContext);
   const [menuOpen, setMenuOpen] = useState(false);
-     const navigate = useNavigate();
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
-    <nav className="w-[95vw] ml-2 mt-3 bg-slate-300 dark:bg-gray-950 shadow-md px-4 py-0 h-12 rounded-[5px] border    ">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
-        
-        {/* Logo */}
-        <div onClick={() => navigate('/')} className="flex items-center">
-          <img src={logo} alt="Logo" className="h-12 w-auto" />
-        </div>
-
-        {/* Desktop Nav Links */}
-        <ul className="hidden md:flex space-x-6 ml-auto">
-          <li><Link to="/" className="text-gray-700 dark:text-gray-300 hover:font-bold cursor-pointer transition-all duration-200">Home</Link></li>
-          <li><Link to="/project"  className="text-gray-700 dark:text-gray-300 hover:font-bold cursor-pointer transition-all duration-200">Projects</Link></li>
-          <li><Link to="/about" className="text-gray-700 dark:text-gray-300 hover:font-bold cursor-pointer transition-all duration-200">About</Link></li>
-          <li><Link to="/contact" className="text-gray-700 dark:text-gray-300 hover:font-bold cursor-pointer transition-all duration-200">Contact</Link></li>
-        </ul>
-
-  
-
-        {/* Mobile Menu Button */}
-        <button 
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden p-2 rounded-sm text-gray-700 dark:text-gray-300 ml-auto border-1 h-7 flex justify-center items-center m-2 w-12"
+    <nav className="sticky top-0 z-40 w-full border-b border-slate-200/80 dark:border-slate-800/80 bg-white/80 dark:bg-slate-950/80 backdrop-blur">
+      <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between gap-6">
+        {/* Brand text (no logo) */}
+        <button
+          onClick={() => scrollToSection('hero')}
+          className="text-[11px] font-semibold tracking-[0.18em] uppercase text-slate-800 dark:text-slate-50 hover:text-slate-500 dark:hover:text-slate-300 transition-colors"
         >
-          {menuOpen ? <X size={24} /> : "Menu"} 
+          Sahil Ahmed
         </button>
 
-              {/* Dark Mode Toggle */}
+        {/* Desktop Nav Links */}
+        <ul className="hidden md:flex items-center gap-6 ml-auto text-[11px] font-medium tracking-[0.18em] uppercase">
+          <li>
+            <button
+              onClick={() => scrollToSection('hero')}
+              className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
+            >
+              Home
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => scrollToSection('projects')}
+              className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
+            >
+              Projects
+            </button>
+          </li>
+          <li>
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
+            >
+              Contact
+            </button>
+          </li>
+        </ul>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="md:hidden inline-flex items-center justify-center rounded-full border border-slate-300/80 dark:border-slate-700/80 px-3 py-1 text-[11px] font-medium tracking-[0.18em] uppercase text-slate-700 dark:text-slate-200"
+        >
+          {menuOpen ? <X size={18} /> : "Menu"}
+        </button>
+
+        {/* Dark Mode Toggle */}
         <button
           onClick={() => setDarkMode(!darkMode)}
-          className="md:ml-auto px-3 py-1 bg-blue-100 text-blue-500 rounded-md dark:bg-gray-700 dark:text-gray-200 active:scale-95 text-sm "
+          className="hidden md:inline-flex items-center justify-center rounded-full border border-slate-300/80 dark:border-slate-700/80 px-3 py-1 text-[11px] font-medium tracking-[0.18em] uppercase text-slate-700 dark:text-slate-200 hover:bg-slate-100/60 dark:hover:bg-slate-900/60 transition-colors"
         >
           {darkMode ? "Light" : "Dark"}
         </button>
-
-
-
       </div>
 
       {/* Mobile Menu */}
-      <div 
-        className={`md:hidden bg-white dark:bg-gray-800 p-2 rounded-lg shadow-md overflow-hidden transition-all duration-300 ease-in-out transform origin-top ${
-          menuOpen ? "scale-y-100 opacity-100 max-h-[200px]" : "scale-y-0 opacity-0 max-h-0"
+      <div
+        className={`md:hidden border-t border-slate-200/80 dark:border-slate-800/80 bg-white/95 dark:bg-slate-950/95 px-4 overflow-hidden transition-all duration-200 ease-in-out ${
+          menuOpen ? "max-h-40 py-3" : "max-h-0 py-0"
         }`}
       >
-        <ul className="space-y-2 text-sm">
-          <li><Link to="/" className="text-gray-700 dark:text-gray-300 block py-1" onClick={() => setMenuOpen(false)}>Home</Link></li>
-          <li><Link to="/project" className="text-gray-700 dark:text-gray-300 block py-1" onClick={() => setMenuOpen(false)}>Projects</Link></li>
-          <li><Link to="/about" className="text-gray-700 dark:text-gray-300 block py-1" onClick={() => setMenuOpen(false)}>About</Link></li>
-          <li><Link to="/contact" className="text-gray-700 dark:text-gray-300 block py-1" onClick={() => setMenuOpen(false)}>Contact</Link></li>
-        </ul>
+        <div className="flex flex-col gap-2 text-[11px] font-medium tracking-[0.18em] uppercase text-slate-700 dark:text-slate-200">
+          <button
+            onClick={() => { scrollToSection('hero'); setMenuOpen(false); }}
+            className="text-left hover:text-slate-900 dark:hover:text-white"
+          >
+            Home
+          </button>
+          <button
+            onClick={() => { scrollToSection('projects'); setMenuOpen(false); }}
+            className="text-left hover:text-slate-900 dark:hover:text-white"
+          >
+            Projects
+          </button>
+          <button
+            onClick={() => { scrollToSection('contact'); setMenuOpen(false); }}
+            className="text-left hover:text-slate-900 dark:hover:text-white"
+          >
+            Contact
+          </button>
+          <button
+            onClick={() => setDarkMode(!darkMode)}
+            className="mt-1 self-start rounded-full border border-slate-300/80 dark:border-slate-700/80 px-3 py-1 text-[11px] font-medium tracking-[0.18em] uppercase text-slate-700 dark:text-slate-200 hover:bg-slate-100/60 dark:hover:bg-slate-900/60 transition-colors"
+          >
+            {darkMode ? "Light" : "Dark"}
+          </button>
+        </div>
       </div>
-
-
-      
     </nav>
   );
 };
