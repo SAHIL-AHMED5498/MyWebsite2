@@ -23,14 +23,6 @@ const Profile = () => {
       </a>
 
       <a
-        href="#"
-        className="inline-flex items-center gap-2 hover:text-slate-900 dark:hover:text-white transition-colors"
-      >
-        <FontAwesomeIcon icon={faInstagram} />
-        <span>Instagram</span>
-      </a>
-
-      <a
         href="https://www.linkedin.com/in/sahil-ahmed-5a32b2222/"
         className="inline-flex items-center gap-2 hover:text-slate-900 dark:hover:text-white transition-colors"
       >

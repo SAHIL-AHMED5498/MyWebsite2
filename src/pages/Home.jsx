@@ -113,7 +113,7 @@ function Home() {
           <section id="hero" className="flex flex-col gap-8">
             <div className="space-y-6 max-w-3xl">
               <p className="text-xs font-medium uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
-                Software Engineer 3 Web Developer
+                Software Engineer | Web Developer
               </p>
               <h1 className="flex items-center gap-3 text-3xl sm:text-4xl font-semibold pb-1 text-slate-900 dark:text-slate-50">
                 <span>SAHIL AHMED</span>
