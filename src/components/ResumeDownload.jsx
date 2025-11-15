@@ -4,7 +4,7 @@ export default function ResumeDownload() {
   return (
     <div className="flex justify-center sm:justify-start">
       <a
-        href="/Sahil Ahmed Resume (1).pdf" // put your resume file in public/ folder
+        href="/SAHIL_AHMED_CV_.pdf" // put your resume file in public/ folder
         download="Sahil_Ahmed_Resume.pdf"
         target="_blank"
         rel="noopener noreferrer"
