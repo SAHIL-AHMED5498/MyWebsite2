@@ -18,12 +18,6 @@ const projects = [
   link: "https://vision-ai-rho.vercel.app/Image-Recog/index.html",
 },
   {
-    title: "Purchase Power Parity Calc",
-    description: "Calc purchasing power of different currencies",
-    image: new URL("../assets/ppp.webp", import.meta.url).href,
-    link: "https://sahil-ahmed5498.github.io/project-3/",
-  },
-  {
     title: "DevConnect-Backend",
     description: "Robust Backend for Recruitment Platform ",
     image: "/images/TMDB.png",
@@ -34,12 +28,6 @@ const projects = [
     description: "Efficient Backend for Note Management using sequelize",
     image: "/images/NOTE-IT.png",
     link: "https://github.com/SAHIL-AHMED5498/Note-It.git",
-  },
-  {
-    title: "New Project",
-    description: "Coming soon...",
-    image: "/images/new-project.jpg",
-    link: "#",
   },
 ];
 

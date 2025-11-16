@@ -44,12 +44,6 @@ function Home() {
       link: "https://vision-ai-rho.vercel.app/Image-Recog/index.html",
     },
     {
-      title: "Purchase Power Parity Calc",
-      description: "Calc purchasing power of different currencies",
-      image: new URL("../assets/ppp.webp", import.meta.url).href,
-      link: "https://sahil-ahmed5498.github.io/project-3/",
-    },
-    {
       title: "DevConnect-Backend",
       description: "Robust Backend for Recruitment Platform ",
       image: "/images/TMDB.png",
@@ -61,12 +55,7 @@ function Home() {
       image: "/images/NOTE-IT.png",
       link: "https://github.com/SAHIL-AHMED5498/Note-It.git",
     },
-    {
-      title: "New Project",
-      description: "Coming soon...",
-      image: "/images/new-project.jpg",
-      link: "#",
-    },
+  
   ];
 
   const scrollToSection = (sectionId) => {
@@ -146,69 +135,34 @@ function Home() {
           </section>
 
           {/* Skills Section */}
-          <section id="skills" className="space-y-4">
-            <h2 className="text-xl font-semibold tracking-tight text-slate-900 dark:text-slate-50">Skills</h2>
-            <div className="bg-white/80 dark:bg-slate-900/80 p-6 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm">
-              <h3 className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-4 uppercase tracking-[0.16em]">Tech Stack</h3>
-              <div className="flex flex-wrap gap-3 justify-start">
-                {skills.map((skill, index) => (
-                  <motion.div
-                    key={index}
-                    whileHover={{ scale: 1.03 }}
-                    className="rounded-full bg-slate-50 dark:bg-slate-800 py-1.5 px-4 text-xs font-medium text-slate-700 dark:text-slate-200 border border-slate-200/70 dark:border-slate-700/80 transition-colors"
-                  >
-                    {skill}
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </section>
+<section id="skills" className="space-y-3">
+  <h2 className="text-lg font-semibold tracking-tight text-slate-900 dark:text-slate-50">
+    Skills
+  </h2>
 
-          {/* Projects Section */}
-          <section id="projects" className="space-y-6">
-            <div className="flex flex-col gap-2">
-              <h2 className="text-xl font-semibold tracking-tight text-slate-900 dark:text-slate-50">Projects</h2>
-              <p className="text-sm text-slate-600 dark:text-slate-300 max-w-2xl">
-                A selection of work ranging from full-stack platforms to AI-powered web experiences.
-              </p>
-            </div>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {projects.map((project, index) => (
-                <motion.a
-                  key={index}
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 220, damping: 20 }}
-                  className="block bg-white/80 dark:bg-slate-900/80 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <div className="relative">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-44 object-cover border-b border-slate-100 dark:border-slate-800"
-                    />
-                    <div className="absolute inset-0 bg-black/35 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
-                      <span className="rounded-full bg-slate-900/90 dark:bg-slate-50/95 text-xs font-medium text-white dark:text-slate-900 py-2 px-5 shadow-sm">
-                        View Project
-                      </span>
-                    </div>
-                  </div>
-                  <div className="p-4 text-left space-y-1">
-                    <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-50">
-                      {project.title}
-                    </h3>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                      {project.description}
-                    </p>
-                  </div>
-                </motion.a>
-              ))}
-            </div>
-          </section>
+  <div className="bg-white/80 dark:bg-slate-900/80 p-4 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm">
+    <h3 className="text-xs font-medium text-slate-500 dark:text-slate-400 mb-3 uppercase tracking-[0.14em]">
+      Tech Stack
+    </h3>
 
-          {/* Experience Section */}
+    <div className="flex flex-wrap gap-2.5 justify-start">
+      {skills.map((skill, index) => (
+        <motion.div
+          key={index}
+          whileHover={{ scale: 1.04 }}
+          className="rounded-full bg-slate-50 dark:bg-slate-800 py-1 px-3 
+                     text-[11px] font-medium text-slate-700 dark:text-slate-200
+                     border border-slate-200/70 dark:border-slate-700/80 
+                     transition-colors"
+        >
+          {skill}
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
+            {/* Experience Section */}
           <section
             id="experience"
             className="scroll-mt-24 max-w-5xl mx-auto px-4 mt-16 sm:mt-24 space-y-8"
@@ -290,24 +244,9 @@ function Home() {
                           Added role-based access control using JWT and middleware under backend team guidance.
                         </span>
                       </li>
-                      <li className="flex gap-2">
-                        <span className="mt-1 h-1 w-1 rounded-full bg-slate-400 dark:bg-slate-500 flex-shrink-0" />
-                        <span>
-                          Conducted manual testing using Postman and submitted structured bug reports.
-                        </span>
-                      </li>
-                      <li className="flex gap-2">
-                        <span className="mt-1 h-1 w-1 rounded-full bg-slate-400 dark:bg-slate-500 flex-shrink-0" />
-                        <span>
-                          Assisted in building admin dashboard components for internal HR operations.
-                        </span>
-                      </li>
-                      <li className="flex gap-2">
-                        <span className="mt-1 h-1 w-1 rounded-full bg-slate-400 dark:bg-slate-500 flex-shrink-0" />
-                        <span>
-                          Wrote sample data seeding scripts and prepared QA-ready test datasets.
-                        </span>
-                      </li>
+                      
+                    
+                      
                       <li className="flex gap-2">
                         <span className="mt-1 h-1 w-1 rounded-full bg-slate-400 dark:bg-slate-500 flex-shrink-0" />
                         <span>
@@ -349,6 +288,52 @@ function Home() {
               </div>
             </div>
           </section>
+
+          {/* Projects Section */}
+          <section id="projects" className="space-y-6">
+            <div className="flex flex-col gap-2">
+              <h2 className="text-xl font-semibold tracking-tight text-slate-900 dark:text-slate-50">Projects</h2>
+              <p className="text-sm text-slate-600 dark:text-slate-300 max-w-2xl">
+                A selection of work ranging from full-stack platforms to AI-powered web experiences.
+              </p>
+            </div>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {projects.map((project, index) => (
+                <motion.a
+                  key={index}
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 220, damping: 20 }}
+                  className="block bg-white/80 dark:bg-slate-900/80 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <div className="relative">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-44 object-cover border-b border-slate-100 dark:border-slate-800"
+                    />
+                    <div className="absolute inset-0 bg-black/35 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <span className="rounded-full bg-slate-900/90 dark:bg-slate-50/95 text-xs font-medium text-white dark:text-slate-900 py-2 px-5 shadow-sm">
+                        View Project
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-4 text-left space-y-1">
+                    <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-50">
+                      {project.title}
+                    </h3>
+                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                      {project.description}
+                    </p>
+                  </div>
+                </motion.a>
+              ))}
+            </div>
+          </section>
+
+        
 
           {/* Contact Section */}
           <section id="contact" className="space-y-6">
