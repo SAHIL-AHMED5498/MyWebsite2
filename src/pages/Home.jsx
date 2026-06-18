@@ -41,7 +41,7 @@ function Home() {
       description:
         "Browser-based image recognition web app powered by TensorFlow.js and MobileNet, capable of identifying objects directly on the client side without any server dependency.",
       image: "/images/vision-ai-preview.png",
-      link: "https://vision-ai-rho.vercel.app/Image-Recog/index.html",
+      link: "https://imagerecog-7ktb.onrender.com",
     },
     {
       title: "DevConnect-Backend",
@@ -197,7 +197,7 @@ function Home() {
                         Full Stack Developer (Intern)
                       </p>
                       <h3 className="text-sm sm:text-base font-semibold tracking-[0.08em] uppercase text-slate-900 dark:text-slate-50">
-                        Seeup Tech
+                        Orbinger
                       </h3>
                     </div>
                     <p className="text-[11px] font-normal tracking-[0.14em] uppercase text-slate-500">
