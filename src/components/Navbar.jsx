@@ -1,106 +1,190 @@
-import { useState } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import { X } from "lucide-react";
 import { ThemeContext } from "../context/ThemeContext";
-import { useContext } from "react";
+
+const NAV_LINKS = [
+  { id: "hero", label: "Home" },
+  { id: "projects", label: "Projects" },
+  { id: "contact", label: "Contact" },
+];
 
 const Navbar = () => {
   const { darkMode, setDarkMode } = useContext(ThemeContext);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 16);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const handler = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [menuOpen]);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
   return (
-    <nav className="sticky top-0 z-40 w-full border-b border-slate-200/80 dark:border-slate-800/80 bg-white/80 dark:bg-slate-950/80 backdrop-blur">
-      <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between gap-6">
-        {/* Brand text (no logo) */}
+    <nav
+      className={`sticky top-0 z-40 w-full h-16 transition-all duration-300 ${
+        darkMode ? "glass-dark" : "glass"
+      } ${scrolled ? "shadow-level-2" : ""}`}
+    >
+      <div className="max-w-5xl mx-auto h-full px-6 flex items-center justify-between gap-6">
+        {/* Brand */}
         <button
-          onClick={() => scrollToSection('hero')}
-          className="text-[11px] font-semibold tracking-[0.18em] uppercase text-slate-800 dark:text-slate-50 hover:text-slate-500 dark:hover:text-slate-300 transition-colors"
+          onClick={() => scrollToSection("hero")}
+          className="font-mono text-sm font-medium tracking-tight text-ink dark:text-white hover:opacity-70 transition-opacity shrink-0"
         >
-          Sahil Ahmed
+          sahilcodes.live
         </button>
 
-        {/* Desktop Nav Links */}
-        <ul className="hidden md:flex items-center gap-6 ml-auto text-[11px] font-medium tracking-[0.18em] uppercase">
-          <li>
-            <button
-              onClick={() => scrollToSection('hero')}
-              className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
-            >
-              Home
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => scrollToSection('projects')}
-              className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
-            >
-              Projects
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
-            >
-              Contact
-            </button>
-          </li>
-        </ul>
+        {/* Desktop Nav Links + Theme Toggle */}
+        <div className="hidden md:flex items-center gap-1 ml-auto">
+          <ul className="flex items-center gap-1 text-body-sm">
+            {NAV_LINKS.map(({ id, label }) => (
+              <li key={id}>
+                <button
+                  onClick={() => scrollToSection(id)}
+                  className="rounded-full px-3 py-2 text-body hover:text-ink hover:bg-canvas-soft dark:text-white/60 dark:hover:text-white dark:hover:bg-white/5 transition-all duration-200"
+                >
+                  {label}
+                </button>
+              </li>
+            ))}
+          </ul>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden inline-flex items-center justify-center rounded-full border border-slate-300/80 dark:border-slate-700/80 px-3 py-1 text-[11px] font-medium tracking-[0.18em] uppercase text-slate-700 dark:text-slate-200"
-        >
-          {menuOpen ? <X size={18} /> : "Menu"}
-        </button>
+          {/* Theme Toggle */}
+          <button
+            onClick={() => setDarkMode(!darkMode)}
+            className="icon-button-circular w-9 h-9 ml-2 dark:text-white transition-colors duration-200"
+            aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+          >
+            <span
+              className={`inline-block transition-transform duration-500 ease-out ${
+                darkMode ? "rotate-180" : "rotate-0"
+              }`}
+            >
+              {darkMode ? (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="5" />
+                  <line x1="12" y1="1" x2="12" y2="3" />
+                  <line x1="12" y1="21" x2="12" y2="23" />
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                  <line x1="1" y1="12" x2="3" y2="12" />
+                  <line x1="21" y1="12" x2="23" y2="12" />
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </svg>
+              ) : (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+              )}
+            </span>
+          </button>
+        </div>
 
-        {/* Dark Mode Toggle */}
-        <button
-          onClick={() => setDarkMode(!darkMode)}
-          className="hidden md:inline-flex items-center justify-center rounded-full border border-slate-300/80 dark:border-slate-700/80 px-3 py-1 text-[11px] font-medium tracking-[0.18em] uppercase text-slate-700 dark:text-slate-200 hover:bg-slate-100/60 dark:hover:bg-slate-900/60 transition-colors"
-        >
-          {darkMode ? "Light" : "Dark"}
-        </button>
+        {/* Mobile: theme toggle + menu button */}
+        <div className="flex md:hidden items-center gap-3 shrink-0">
+          <button
+            onClick={() => setDarkMode(!darkMode)}
+            className="icon-button-circular w-9 h-9 dark:text-white transition-colors duration-200"
+            aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+          >
+            <span
+              className={`inline-block transition-transform duration-500 ease-out ${
+                darkMode ? "rotate-180" : "rotate-0"
+              }`}
+            >
+              {darkMode ? (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="5" />
+                  <line x1="12" y1="1" x2="12" y2="3" />
+                  <line x1="12" y1="21" x2="12" y2="23" />
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                  <line x1="1" y1="12" x2="3" y2="12" />
+                  <line x1="21" y1="12" x2="23" y2="12" />
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                </svg>
+              ) : (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+              )}
+            </span>
+          </button>
+
+          <button
+            onClick={() => setMenuOpen((v) => !v)}
+            className="nav-cta-ask-ai w-9 h-9 !px-0 !justify-center dark:text-white"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+          >
+            <span
+              className={`inline-block transition-transform duration-300 ease-out ${
+                menuOpen ? "rotate-90 scale-90" : "rotate-0 scale-100"
+              }`}
+            >
+              {menuOpen ? <X size={16} /> : (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <line x1="3" y1="12" x2="21" y2="12" />
+                  <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+              )}
+            </span>
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden border-t border-slate-200/80 dark:border-slate-800/80 bg-white/95 dark:bg-slate-950/95 px-4 overflow-hidden transition-all duration-200 ease-in-out ${
-          menuOpen ? "max-h-40 py-3" : "max-h-0 py-0"
+        ref={menuRef}
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-out border-t border-hairline/30 ${
+          darkMode
+            ? "bg-[rgba(15,15,15,0.92)] backdrop-blur-xl"
+            : "bg-[rgba(255,255,255,0.92)] backdrop-blur-xl"
+        } ${
+          menuOpen
+            ? "max-h-64 opacity-100"
+            : "max-h-0 opacity-0 border-t-transparent"
         }`}
       >
-        <div className="flex flex-col gap-2 text-[11px] font-medium tracking-[0.18em] uppercase text-slate-700 dark:text-slate-200">
-          <button
-            onClick={() => { scrollToSection('hero'); setMenuOpen(false); }}
-            className="text-left hover:text-slate-900 dark:hover:text-white"
-          >
-            Home
-          </button>
-          <button
-            onClick={() => { scrollToSection('projects'); setMenuOpen(false); }}
-            className="text-left hover:text-slate-900 dark:hover:text-white"
-          >
-            Projects
-          </button>
-          <button
-            onClick={() => { scrollToSection('contact'); setMenuOpen(false); }}
-            className="text-left hover:text-slate-900 dark:hover:text-white"
-          >
-            Contact
-          </button>
-          <button
-            onClick={() => setDarkMode(!darkMode)}
-            className="mt-1 self-start rounded-full border border-slate-300/80 dark:border-slate-700/80 px-3 py-1 text-[11px] font-medium tracking-[0.18em] uppercase text-slate-700 dark:text-slate-200 hover:bg-slate-100/60 dark:hover:bg-slate-900/60 transition-colors"
-          >
-            {darkMode ? "Light" : "Dark"}
-          </button>
+        <div className="px-6 py-3 flex flex-col gap-1 text-body-sm">
+          {NAV_LINKS.map(({ id, label }, i) => (
+            <button
+              key={id}
+              onClick={() => {
+                scrollToSection(id);
+                setMenuOpen(false);
+              }}
+              className={`text-left rounded-lg px-3 py-2.5 text-body hover:text-ink dark:text-white/70 dark:hover:text-white hover:bg-canvas-soft dark:hover:bg-white/5 transition-all duration-200 ${
+                menuOpen
+                  ? "translate-x-0 opacity-100"
+                  : "-translate-x-3 opacity-0"
+              }`}
+              style={{ transitionDelay: menuOpen ? `${i * 50}ms` : "0ms" }}
+            >
+              {label}
+            </button>
+          ))}
         </div>
       </div>
     </nav>
