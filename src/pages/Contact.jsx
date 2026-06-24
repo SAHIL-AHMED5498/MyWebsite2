@@ -1,6 +1,8 @@
+
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import emailjs from "@emailjs/browser";
+
 
 const Contact = () => {
   const [isSending, setIsSending] = useState(false);
@@ -24,7 +26,7 @@ const Contact = () => {
 
     emailPromise
       .then(() => {
-        e.target.reset(); // Clear form
+        e.target.reset();
       })
       .catch((error) => {
         console.error("EmailJS Error:", error);
@@ -34,54 +36,60 @@ const Contact = () => {
       });
   };
 
-  return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 flex items-start justify-center px-6 py-6">
-      <div className="max-w-lg w-full text-center">
-        <h1 className="text-3xl font-bold mb-4">Contact Me</h1>
-        <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-          Feel free to reach out for any inquiries or collaborations!
-        </p>
+  return (<>      <section id="contact" className="bg-canvas dark:bg-primary">
+        <div className="max-w-6xl mx-auto px-6 py-8 sm:py-10 space-y-4">
+          <div className="space-y-1">
+            <span className="font-mono text-caption-mono uppercase text-mute">
+              Get in touch
+            </span>
+            <h2 className="text-display-lg text-ink dark:text-on-primary">
+              Contact
+            </h2>
+            <p className="text-body-md text-body max-w-2xl">
+              Have an opportunity, project idea, or collaboration in mind? Drop
+              me a message and I&rsquo;ll get back to you.
+            </p>
+          </div>
 
-        <form
-          className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md space-y-4"
-          onSubmit={sendEmail}
-        >
-          <input
-            name="from_name"  
-            type="text"
-            placeholder="Your Name"
-            required
-            className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-md bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
-          />
-          <input
-            name="reply_to"  
-            type="email"
-            placeholder="Your Email"
-            required
-            className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-md bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
-          />
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            rows="4"
-            required
-            className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-md bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
-          />
-          <button
-            type="submit"
-            disabled={isSending}
-            className={`w-full py-3 rounded-md transition-all duration-300 font-semibold ${
-              isSending
-                ? "bg-gray-400 cursor-not-allowed"
-                : "bg-blue-500 hover:bg-blue-600 text-white"
-            }`}
+          <form
+            className="card-marketing-large max-w-lg w-full space-y-4"
+            onSubmit={sendEmail}
           >
-            {isSending ? "Sending..." : "Send Message"}
-          </button>
-        </form>
-      </div>
-    </div>
-  );
-};
+            <input
+              name="from_name"
+              type="text"
+              placeholder="Your Name"
+              required
+              className="form-input w-full"
+            />
+            <input
+              name="reply_to"
+              type="email"
+              placeholder="Your Email"
+              required
+              className="form-input w-full"
+            />
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              rows="4"
+              required
+              className="form-input w-full !h-auto py-3 resize-none"
+            />
+            <button
+              type="submit"
+              disabled={isSending}
+              className={`w-full button-primary justify-center ${
+                isSending ? "opacity-50 cursor-not-allowed" : ""
+              }`}
+            >
+              {isSending ? "Sending..." : "Send Message"}
+            </button>
+          </form>
+        </div>
+      </section></>)}
 
-export default Contact;
+
+
+
+export default Contact

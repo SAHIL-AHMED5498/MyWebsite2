@@ -1,0 +1,17 @@
+export const skills = [
+  "Java",
+  "C-Language",
+  "HTML",
+  "CSS",
+  "JavaScript & React",
+  "React Redux",
+  "Zustand",
+  "Typescript",
+  "Tailwind CSS",
+  "Node.js & Express",
+  "Firebase",
+  "Docker",
+  "Websocket.io",
+  "Database Management (SQL & MongoDB)",
+  "UI/UX & Responsive Design",
+];
