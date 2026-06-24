@@ -1,12 +1,12 @@
 import {scrollToSection} from "../utils/scrollToSection";
-import MeshGradient from "./MeshGradient";
-import Thunder from "./Thunder";
-import Profile from "./Profile";
+import MeshGradient from "../components/MeshGradient";
+import Thunder from "../components/Thunder";
+import Profile from "../components/Profile";
 
 
 
 
-const Navbar = () => {
+const Hero = () => {
 
 
 
@@ -54,4 +54,4 @@ const Navbar = () => {
         </section></>)
 }
 
-export default Navbar
+export default Hero
